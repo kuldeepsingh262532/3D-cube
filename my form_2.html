@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .pas{
+        width: 350px;
+        height: 550px;
+        border: 1px solid blue;
+        margin: auto;
+        background:rgb(196, 220, 241);
+        border-radius: 30px;
+        margin-top: 30px;
+    }
+    h1{
+       margin-left: 80px;
+    }
+    h3{
+        padding-left: 20px;
+       
+        color: white;
+    }
+
+    input{
+        width: 200px;
+        height: 25px;
+        border-radius: 10px;
+        padding-left: 20px;
+        margin-left: 30px;
+        font-size: 20px;
+    }
+    .but{
+        width: 80px;
+        height: 30px;
+        margin-left: 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .butt{
+        width: 150px;
+        height: 30px;
+        margin-left: 15px;
+        border-radius: 10px;
+        cursor: pointer; 
+        font-size: 18px;
+    }
+    .but:hover{
+        background-color: rgb(40, 116, 239);
+        color:white;
+    }  
+    .butt:hover{
+        background-color: rgb(40, 116, 239);
+        color:white;
+    }  
+    .pass-chack{
+            padding-left: 40px;
+            color: red;
+    }
+</style>
+</head>
+<body>
+    <!-- 4. password RegExp validation  -->
+    <div class="pas">
+        <form action="" method="post" onsubmit="return validate()">
+        <h1><u>Login Page</u></h1>
+        <h3>username</h3>
+        <input type="text" id="user" placeholder="enter your name"><br>
+        <h3>password</h3>
+        <input type="password" id="pass" autocomplete="off" onkeyup="passchack(this.value)" placeholder="enter your password">
+        <h3>confirm password</h3>
+        <input type="password" id="con-pass" placeholder="enter your password"> <br><br>
+
+        <p>
+            <label for="" class="pass-chack">8 characters</label><br>
+            <label for="" class="pass-chack">1 lower case characters </label><br>
+            <label for="" class="pass-chack">1 upper case characters</label><br>
+            <label for="" class="pass-chack">1 numerical characters</label><br>
+            <label for="" class="pass-chack">1 Special characters</label><br>
+        </p>
+        <button class="but">Login</button>
+       
+    </form>
+    </div>
+
+</body>
+<script>
+     1. first
+     var pattern = /[a-z][0-9]/ig;
+    var str= "Tech56ra";m
+    console.log(pattern.test(str));
+
+     2.second 
+     var pattern=new RegExp('[a-z][A-Z][0-9]','ig');
+     console.log(pattern.toString());
+
+    // 3. thread
+    // var pattern=new RegExp('(?=.*[A-Z])');
+    // var str= "tech56ra";
+    // console.log(pattern.test(str));
+
+
+    // 4. password RegExp validation 
+
+function passchack(data){
+
+   var pass=document.getElementsByClassName("pass-chack"); 
+      const lowercase=new RegExp ('(?=.*[a-z])');
+      const uppercase=new RegExp ('(?=.*[A-Z])');
+      const number=new RegExp ('(?=.*[0-9])');
+      const special=new RegExp ('(?=.[!@#\$%\^&\])');
+      const eightchar=new RegExp ('(?=.{8,})');
+
+      if(eightchar.test(data)){
+        pass[0].style.color="green";
+
+      }else{
+        pass[0].style.color="red";
+      }
+
+      if(lowercase.test(data)){
+        pass[1].style.color="green";
+
+      }else{
+        pass[1].style.color="red";
+      }
+
+      if(uppercase.test(data)){
+        pass[2].style.color="green";
+
+      }else{
+        pass[2].style.color="red";
+      }
+
+      if(number.test(data)){
+        pass[3].style.color="green";
+
+      }else{
+        pass[3].style.color="red";
+      }
+
+      if(special.test(data)){
+        pass[4].style.color="green";
+
+      }else{
+        pass[4].style.color="red";
+      }
+}
+
+</script>
+</html>
