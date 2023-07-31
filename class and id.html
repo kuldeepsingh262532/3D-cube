@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class and id</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        
+        .cube {
+            width: 20px;
+            height: 20px;
+            transform-style:preserve-3d;
+            animation: turn 5s linear infinite;
+            margin: 50px;
+            margin-left: 200px;
+        }
+        
+        @keyframes turn {
+            from {
+                transform: rotate3d(1, 1, 0, 360deg);
+            }
+        
+            to {
+                transform: rotate3d(0, 0, 0, 0);
+            }
+        }
+        
+        .face {
+            width: 100px;
+            height: 100px;
+            border: 3px solid white;
+            /* background-color: red; */
+            /* background: radial-gradient(red,yellow,green); */
+            position: absolute;
+            opacity: 0.75;
+            transform: translateZ(50px);
+        }
+        
+        .front {
+            transform: translateZ(50px);
+            background-image: url(IMG_5446.PNG);
+            background-size: cover;
+           
+           
+           
+        }
+        
+        .back {
+            transform: translateZ(-50px) rotateY(180deg);
+            /* background-color: blueviolet;  */
+          
+        }
+        
+        .left {
+            transform: translateX(-50px) rotateY(-90deg);
+           
+        }
+        
+        .right {
+            transform: translateX(50px) rotateY(90deg);
+           
+        }
+        
+        .top {
+            transform: translateY(-50px) rotateX(90deg);
+           
+        }
+        
+        .bottom {
+            transform: translateY(50px) rotateX(-90deg);
+            
+        }
+        .pawan{
+            background-color: aqua;
+        }
+        .pawan1{
+            background-color: red;
+        }
+        #p2{
+            text-align: center;
+
+        }
+        #p3{
+            font-size: 200px;
+
+        }
+        .cont{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- class can be same and diff both -->
+
+    <!-- class use for dot(.) -->
+
+
+    <h1 class="pawan">
+        whats your name 
+    </h1>
+
+    <h1 class="pawan">
+        hy my self alexa
+    </h1>
+
+    <h1 class="pawan1">
+        hy kuldeep what are you doing
+    </h1>
+
+
+    <!-- id can not be same alwys use diff id -->
+
+    <h1 id="p2">
+        hy my self kuldeep
+    </h1>
+
+    <h1 id="p3">
+        hy kuldeep 
+    </h1>
+
+
+    <!-- DIV AND SPAN -->
+
+    <div class="cont">
+        <h1>hello mr kuldeep </h1>
+        <h2>hy kuldeep miss you</h2>
+        <h3>kuldeep you are forevr</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, quasi.</p>
+    </div>
+
+
+    <!-- span -->
+
+    <p>Lorem ipsum dolor sit amet, consectetur <span style="background-color: red; font-size: 100px;">kuldeep</span> adipisicing elit. Tempora, totam!</p>
+
+    
+</body>
+</html>
